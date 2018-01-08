@@ -1,0 +1,38 @@
+[user]
+  name = Ammar Khaku
+  email = fillmein@example.com
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red
+  new = cyan
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[alias]
+  fnr = !sh -c \"git stash && git fetch && git rebase origin/master && git stash pop\"
+  rmbranch = !sh -c \"git rebase origin/master $1 && git checkout - && git branch -d $1\"
+  s = status
+  d = diff
+  b = branch
+  lb = "for-each-ref --sort=-committerdate refs/heads/ --format='%1B[0;31m%(refname:short)%1B[m   %(subject)'"
+  mvcommit = "!f() { git cherry-pick $1; git branch -D $1; git branch -m $1 }; f"
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+[core]
+	excludesfile = /Users/akhaku/.gitignore
+  editor = /usr/bin/vim
+[diff]
+	tool = vimdiff
+[pull]
+	rebase = true
+[push]
+	default = simple
