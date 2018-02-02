@@ -7,7 +7,7 @@ parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-PS1="$RED\u@\h$CLOSE:$GREEN\w$CLOSE>$YELLOW\$(parse_git_branch)$CLOSE"
+PS1="$RED\u@\h$CLOSE:$GREEN\w$CLOSE>$YELLOW\$(parse_git_branch)$CLOSE "
 
 # History
 export HISTCONTROL=erasedups
