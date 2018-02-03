@@ -32,3 +32,11 @@ _git_rmbranch() {
 _git_mvcommit() {
   _git_branch
 }
+
+if [ -f "$HOME/.git-completion.bash" ]; then
+  source "$HOME/.git-completion.bash"
+fi
+
+if [ -f "$HOME/.bash_profile.local" ]; then
+  source "$HOME/.bash_profile.local"
+fi
