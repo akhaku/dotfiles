@@ -27,6 +27,7 @@
   lb = "for-each-ref --sort=-committerdate refs/heads/ --format='%1B[0;31m%(refname:short)%1B[m   %(subject)'"
   mvcommit = "!f() { git cherry-pick $1; git branch -D $1; git branch -m $1 }; f"
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+  logauthors = "!git log --pretty=format:\"%an\" | sort | uniq -c | sort -rn"
 [core]
 	excludesfile = /Users/akhaku/.gitignore
   editor = /usr/bin/vim
