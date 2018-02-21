@@ -37,6 +37,10 @@ if [ -f "$HOME/.git-completion.bash" ]; then
   source "$HOME/.git-completion.bash"
 fi
 
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
 if [ -f "$HOME/.bash_profile.local" ]; then
   source "$HOME/.bash_profile.local"
 fi
